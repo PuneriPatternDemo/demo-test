@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Simple Project</h1>
+        <button onclick="displayMessage()">Click Me</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        function displayMessage() {
+            document.getElementById("message").innerText = "Hello!  clicked the button.";
+        }
+    </script>
+    
+    <script>
+        // Test cases
+        document.addEventListener("DOMContentLoaded", function() {
+            console.assert(document.querySelector("h1").innerText === "Welcome to My Simple Project", "Test Failed: Heading text incorrect");
+            
+            let button = document.querySelector("button");
+            let message = document.getElementById("message");
+            
+            // Simulate button click
+            button.click();
+            console.assert(message.innerText === "Hello! You clicked the button.", "Test Failed: Message did not update");
+        });
+    </script>
+</body>
+</html>
